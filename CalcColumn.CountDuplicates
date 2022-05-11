@@ -1,0 +1,8 @@
+Var ContactIDs = [Contact ID]
+RETURN
+
+CALCULATE(
+    COUNTROWS('All Contacts'),
+    all('All Contacts'),
+    'All Contacts'[Contact ID] = ContactIDs
+)
