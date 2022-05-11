@@ -1,0 +1,1 @@
+CALCULATE(COUNTROWS('Selected Activities 2'), 'Selected Activities 2'[Activity Type] = "Attended Event")
