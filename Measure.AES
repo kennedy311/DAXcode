@@ -1,0 +1,16 @@
+(0.1 * 'Engagement Measures'[AESannouncement]) + 
+(1.0 * 'Engagement Measures'[AESattendedevent]) + 
+(1.5 * 'Engagement Measures'[AESdownloadedcontent]) + 
+(0.1 * 'Engagement Measures'[AESholidaycard]) + 
+(0.1 * 'Engagement Measures'[AESinvitation]) + 
+(0.1 * 'Engagement Measures'[AESmarketingmailing]) + 
+(0.1 * 'Engagement Measures'[AESnewsletter]) + 
+(0.05 * 'Engagement Measures'[AESopened]) + 
+(0.5 * 'Engagement Measures'[AESoptin]) - 
+(2.0 * 'Engagement Measures'[AESoptout]) + 
+(0.5 * 'Engagement Measures'[AESrsvp]) + 
+(2.0 * 'Engagement Measures'[AESopportunity]) + 
+(2.0 * 'Engagement Measures'[AESclientpitch]) + 
+(2.0 * 'Engagement Measures'[AESproposal]) + 
+(2.0 * 'Engagement Measures'[AESpropsectpitch]) + 
+(2.0 * 'Engagement Measures'[AESrfp])
