@@ -1,0 +1,56 @@
+SWITCH(TRUE(),
+    SEARCH("CEO", [Job Title],,0) > 0 ||
+        SEARCH("PDG", [Job Title],,0) > 0 ||
+        CONTAINSSTRINGEXACT([Job Title], "COO") ||
+        CONTAINSSTRINGEXACT([Job Title], "CLO") ||
+        CONTAINSSTRINGEXACT([Job Title], "General Counsel") ||
+        CONTAINSSTRINGEXACT([Job Title], "Secretary General") ||
+        SEARCH("CFO", [Job Title],,0) > 0 ||
+        SEARCH("Chief", [Job Title],,0) > 0 ||
+        SEARCH("Chef", [Job Title],,0) > 0 ||
+        SEARCH("VP", [Job Title],,0) > 0 ||
+        SEARCH("Président", [Job Title],,0) > 0 ||
+        SEARCH("Présidente", [Job Title],,0) > 0 ||
+        SEARCH("Executive Director", [Job Title],,0) > 0 ||
+        SEARCH("Chairman", [Job Title],,0) > 0 ||
+        SEARCH("Directeur général", [Job Title],,0) > 0 ||
+        SEARCH("Founder", [Job Title],,0) > 0 ||
+        SEARCH("Fondateur", [Job Title],,0) > 0 ||
+        SEARCH("Owner", [Job Title],,0) > 0 ||
+        SEARCH("Propriétaire", [Job Title],,0) > 0 ||
+        SEARCH("President", [Job Title],,0) > 0,
+        "Senior Leadership",
+    SEARCH("Manager", [Job Title],,0) > 0 ||
+        SEARCH("Advisor", [Job Title],,0) > 0 ||
+        SEARCH("Directrice", [Job Title],,0) > 0 ||
+        SEARCH("Directeur", [Job Title],,0) > 0 ||
+        SEARCH("Conseillère", [Job Title],,0) > 0 ||
+        SEARCH("Conseillere", [Job Title],,0) > 0 ||
+        SEARCH("Conseiller", [Job Title],,0) > 0 ||
+        SEARCH("Chargé de", [Job Title],,0) > 0 ||
+        SEARCH("Consultante", [Job Title],,0) > 0 ||
+        SEARCH("Consultant", [Job Title],,0) > 0 ||
+        SEARCH("Director", [Job Title],,0) > 0,
+        "Business Professionals",
+    CONTAINSSTRINGEXACT([Job Title], "Partner") ||
+        CONTAINSSTRINGEXACT([Job Title], "Avocat") ||
+        CONTAINSSTRINGEXACT([Job Title], "Avocate") ||
+        CONTAINSSTRINGEXACT([Job Title], "avocate") ||
+        CONTAINSSTRINGEXACT([Job Title], "Abogado") ||
+        CONTAINSSTRINGEXACT([Job Title], "Of Counsel") ||
+        CONTAINSSTRINGEXACT([Job Title], "Counsel") ||
+        CONTAINSSTRINGEXACT([Job Title], "Senior Counsel") ||
+        CONTAINSSTRINGEXACT([Job Title], "Attorney") ||
+        CONTAINSSTRINGEXACT([Job Title], "Associé") ||
+        CONTAINSSTRINGEXACT([Job Title], "Associée") ||
+        CONTAINSSTRINGEXACT([Job Title], "Barrister") ||
+        CONTAINSSTRINGEXACT([Job Title], "Solicitor") ||
+        CONTAINSSTRINGEXACT([Job Title], "Lawyer") ||
+        CONTAINSSTRINGEXACT([Job Title], "Juriste") ||
+        CONTAINSSTRINGEXACT([Job Title], "Conseiller juridique") ||
+        CONTAINSSTRINGEXACT([Job Title], "Associate"),
+        "Legal Counsel",
+    SEARCH("NULL", [Job Title],,0) > 0,
+        "No Job Title",
+    "Other"
+  )
