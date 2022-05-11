@@ -1,0 +1,42 @@
+CalcLawyers = 
+VAR Separator = ";#"
+VAR Indexes =
+    FILTER (
+        SUMMARIZE (
+            ADDCOLUMNS (
+                CALENDAR (
+                    DATE ( 2000, 1, 1 ),
+                    DATE ( 2000
+                        + MAXX (
+                            'Proposals and Pitches',
+                            1 + LEN ( [Lead Lawyer] )
+                                - LEN ( SUBSTITUTE ( [Lead Lawyer], Separator, "" ) )
+                        ), 1, 1 )
+                ),
+                "Index", YEAR ( [Date] ) - 2000
+            ),
+            [Index]
+        ),
+        [Index] > 0
+    )
+RETURN
+    SUMMARIZE (
+        ADDCOLUMNS (
+            FILTER (
+                CROSSJOIN (
+                    ADDCOLUMNS (
+                        'Proposals and Pitches',
+                        "LawyerCount", 1
+                            + ( LEN ( [Lead Lawyer] ) - LEN ( SUBSTITUTE ( [Lead Lawyer], Separator, "" ) ) )
+                                / LEN ( Separator )
+                    ),
+                    Indexes
+                ),
+                [Index] <= [LawyerCount]
+            ),
+            "Lawyer", PATHITEM ( SUBSTITUTE ( [Lead Lawyer], Separator, "|" ), [Index] )
+        ),
+        [Id],
+        [Name],
+        [Lawyer]
+    )
