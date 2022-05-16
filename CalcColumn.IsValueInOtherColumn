@@ -1,0 +1,5 @@
+Var CheckValue = SELECTCOLUMNS('Table1', "Column Name Text", [Column Name1])
+RETURN
+
+IF('Table2'[Column Name2] IN CheckValue, "Yes", "No"
+)
