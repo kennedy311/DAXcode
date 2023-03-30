@@ -47,6 +47,4 @@ let
     #"Changed Type8" = Table.TransformColumnTypes(#"Added Custom1",{{"Today", type date}})
 in
     #"Changed Type8"
-    /* This is a Power BI standard calendar created by EPM Strategy.  There is no warranty with this
-and is used as is with user taking all risks.  User should confirm that dates and days match
-their organizational calendar. */
+   
